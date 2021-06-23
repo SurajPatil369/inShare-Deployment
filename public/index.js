@@ -15,10 +15,11 @@ const emailForm = document.querySelector("#emailForm");
 
 const toast = document.querySelector(".toast");
 
-const baseURL = "https://iinshare.herokuapp.com";
-const uploadURL = `${baseURL}/api/files`; 
+const baseURL ="https://iinshare.herokuapp.com" ;
+// https://iiinshare.herokuapp.com
+const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
- 
+
 const maxAllowedSize = 100 * 1024 * 1024; //100mb
 
 
@@ -55,7 +56,7 @@ dropZone.addEventListener("dragleave", (e) => {
 
   console.log("drag ended");
 });
- 
+
 // file input change and uploader
 fileInput.addEventListener("change", () => {
   if (fileInput.files[0].size > maxAllowedSize) {
@@ -98,7 +99,7 @@ const uploadFile = () => {
     const scaleX = `scaleX(${percent / 100})`;
     bgProgress.style.transform = scaleX;
     progressBar.style.transform = scaleX;
-  }; 
+  };
 
   // handle error
   xhr.upload.onerror = function () {

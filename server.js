@@ -2,7 +2,12 @@ const express = require('express');
 const path = require('path');
 const app= express();
 const PORT = process.env.PORT || 3001;
-app.use(express.static('public'));//which folder to watch for staticfiles
+// app.use(express.static('public'));//which folder to watch for staticfiles
+// app.use('./')
+
+// path.join(__dirname,'public')
+const staticPath=path.join(path.join(__dirname,'public'))
+app.use(express.static(staticPath));
 app.use(express.json());
 const connectDB=require('./config/db');
 const cors = require('cors')
